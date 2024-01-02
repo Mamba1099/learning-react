@@ -1,34 +1,27 @@
-// import React from 'react';
-
 import { UseForm } from './UseForm';
 
 const App = () => {
   const [values, handleChange] = UseForm({email: '', password: ''});
-  
 
+  
   return (
     <div className="body">
       <h1>Sign In</h1>
-      <form>
-        <div className="email-field">
-          <input
-            type="email"
-            placeholder="Email"
-            value={values.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="pass-field">
-          <input
-            type="password"
-            placeholder="Password"
-            value={values.password}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <button className="btn" type="submit">Sign In</button>
-        </div>
+      <form className="form-field">
+        <input
+          name="email"
+          placeholder="Email"
+          value={values.email}
+          onChange={handleChange}
+        />
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          value={values.password}
+          onChange={handleChange}
+        />
+        <button className="btn" type="submit">Sign In</button>
       </form>
     </div>
   )
